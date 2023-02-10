@@ -9,5 +9,20 @@ package lab4p2_equipo2;
  * @author HTS
  */
 public class Alfil extends Pieza{
+
+    public Alfil() {
+        super();
+    }
+
+    public Alfil(String nombre, boolean blanco, boolean negro, int x, int y) {
+        super(nombre, blanco, negro, x, y);
+        if (blanco){
+            this.nombre="B";
+        }else{
+            this.nombre="b";
+        }
+    }
+    
+    
     
 }

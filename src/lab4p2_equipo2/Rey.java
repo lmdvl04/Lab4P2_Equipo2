@@ -9,5 +9,20 @@ package lab4p2_equipo2;
  * @author HTS
  */
 public class Rey extends Pieza{
+
+    public Rey() {
+        super();
+    }
+
+    public Rey(String nombre, boolean blanco, boolean negro, int x, int y) {
+        super(nombre, blanco, negro, x, y);
+        if (blanco){
+            this.nombre="K";
+        }else{
+            this.nombre="k";
+        }
+    }
+    
+    
     
 }

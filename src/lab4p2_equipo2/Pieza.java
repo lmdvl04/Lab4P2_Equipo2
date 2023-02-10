@@ -66,7 +66,7 @@ public abstract class Pieza {
 
     @Override
     public String toString() {
-        return "Pieza{" + "nombre=" + nombre + ", blanco=" + blanco + ", negro=" + negro + ", x=" + x + ", y=" + y + '}';
+        return nombre;
     }
     
     

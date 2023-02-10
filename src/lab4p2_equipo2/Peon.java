@@ -9,5 +9,24 @@ package lab4p2_equipo2;
  * @author HTS
  */
 public class Peon extends Pieza{
+
+    public Peon() {
+        super();
+    }
+
+    public Peon(String nombre, boolean blanco, boolean negro, int x, int y) {
+        super(nombre, blanco, negro, x, y);
+        if (blanco){
+            this.nombre="P";
+        }else{
+            this.nombre="p";
+        }
+        
+        
+    }
+    
+    
+    
+    
     
 }
