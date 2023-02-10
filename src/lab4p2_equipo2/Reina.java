@@ -25,7 +25,18 @@ public class Reina extends Pieza{
 
     @Override
     public boolean movimiento(Object[][] matriz, int actualx, int actualy, int destinox, int destinoy) {
-        
+        boolean valido=false;
+
+        if (matriz.length - 1 >= destinox && matriz[0].length - 1 >= destinoy) {
+            if(actualx == destinox || actualy == destinoy){
+                valido = true;
+            }else if ((actualx != destinox || actualy != destinoy)&&(destinox == destinoy)) {
+                valido = true;
+            } else{
+                valido = false;
+            }
+        }
+        return valido;
     }
     
     
