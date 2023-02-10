@@ -8,6 +8,6 @@ package lab4p2_equipo2;
  *
  * @author HTS
  */
-public class Rey {
+public class Rey extends Pieza{
     
 }

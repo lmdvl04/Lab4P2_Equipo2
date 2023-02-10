@@ -8,6 +8,6 @@ package lab4p2_equipo2;
  *
  * @author HTS
  */
-public class Alfil {
+public class Alfil extends Pieza{
     
 }
