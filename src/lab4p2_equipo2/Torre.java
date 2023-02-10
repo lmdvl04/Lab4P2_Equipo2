@@ -18,9 +18,23 @@ public class Torre extends Pieza{
         super(nombre, blanco, negro, x, y);
         if (blanco){
             this.nombre="R";
-        }else{
+        }else if (negro){
             this.nombre="r";
         }
+    }
+
+    @Override
+    public boolean movimiento(Object[][] matriz, int actualx, int actualy, int destinox, int destinoy) {
+        boolean valido=false;
+
+        if (matriz.length - 1 >= destinox && matriz[0].length - 1 >= destinoy) {
+            if(actualx == destinox || actualy == destinoy){
+                valido = true;
+            }else{
+                valido=false;
+            }
+        }
+      return valido; 
     }
     
     

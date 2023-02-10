@@ -18,9 +18,14 @@ public class Rey extends Pieza{
         super(nombre, blanco, negro, x, y);
         if (blanco){
             this.nombre="K";
-        }else{
+        }else if(negro){
             this.nombre="k";
         }
+    }
+
+    @Override
+    public boolean movimiento(Object[][] matriz, int actualx, int actualy, int destinox, int destinoy) {
+      
     }
     
     

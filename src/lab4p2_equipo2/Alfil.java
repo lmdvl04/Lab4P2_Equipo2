@@ -18,9 +18,14 @@ public class Alfil extends Pieza{
         super(nombre, blanco, negro, x, y);
         if (blanco){
             this.nombre="B";
-        }else{
+        }else if (negro){
             this.nombre="b";
         }
+    }
+
+    @Override
+    public boolean movimiento(Object[][] matriz, int actualx, int actualy, int destinox, int destinoy) {
+       
     }
     
     

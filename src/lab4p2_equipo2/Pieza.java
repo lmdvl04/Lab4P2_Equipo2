@@ -68,6 +68,9 @@ public abstract class Pieza {
     public String toString() {
         return nombre;
     }
+    public abstract boolean movimiento (Object[][] matriz, int actualx, int actualy, int destinox, int destinoy);
+        
+    
     
     
 }
