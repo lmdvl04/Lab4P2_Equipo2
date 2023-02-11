@@ -7,6 +7,10 @@ public class Lab4P2_Equipo2 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         Object[][] tablero = new Object[8][8];
+        System.out.print("Ingrese el nombre del jugador 1: ");
+        String nombre1 = leer.nextLine();
+        System.out.println("Ingrese el nombre del jugador 2: ");
+        String nombre2 = leer.nextLine();
         boolean blanco = true;
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
@@ -36,7 +40,12 @@ public class Lab4P2_Equipo2 {
         for (int j = 0; j < 8; j++) {
             tablero[6][j] = new Peon("p", false, true, 6, j);
         }
-        System.out.println("  A  B  C  D  E  F  G  H");
+        
+        boolean terminar = false;
+        boolean nicaso = false;
+        boolean mover;
+        do {
+            System.out.println("  A  B  C  D  E  F  G  H");
         for (int i = 0; i < tablero.length; i++) {
             System.out.print(i);
             for (int j = 0; j < tablero[i].length; j++) {
@@ -44,29 +53,36 @@ public class Lab4P2_Equipo2 {
             }
             System.out.println();
         }
-        boolean terminar = false;
-        boolean nicaso = false;
-        boolean mover = false;
-        boolean prueba;
-        do {
+            if (blanco) {
+                System.out.println(nombre1+" ponete viv@, move algo");
+            }else{
+                System.out.println(nombre2+" viv@ chaval@");
+            }
             System.out.print("Ingrese la cadena (pieza)|ubicacion actual-destino: ");
             String cadena = leer.nextLine();
+            if(cadena.toLowerCase().equals("gusbai")){
+                System.out.println("cheke");
+                terminar = true;
+            }else{
             String movimiento[] = cadena.split("\\|");
             String posactual = movimiento[0];
             String demas = movimiento[1];
+                System.out.println(posactual+" "+demas);
             char tipo = posactual.charAt(0);
             int actualc = valorchar(demas.charAt(0));
-            int actualc2 = Character.getNumericValue(1);
+            int actualc2 = (int) demas.charAt(1)-48;
             int nuevoc = valorchar(demas.charAt(3));
-            int nuevoc2 = Character.getNumericValue(4);
+            int nuevoc2 = (int) demas.charAt(4)-48;
+                System.out.println(actualc+" "+actualc2+" "+nuevoc+" "+nuevoc2);
             if (blanco) {
                 switch (tipo) {
                     case 'P':
-                        System.out.println("llegara");
                         mover = ((Pieza) (tablero[actualc2][actualc])).movimiento(tablero, actualc2, actualc, nuevoc2, nuevoc);
-                        System.out.println("llegara ");
                         if (mover) {
                             if (((Peon) (tablero[nuevoc2][nuevoc])).isBlanco() || ((Rey) (tablero[nuevoc2][nuevoc])).isBlanco() || ((Reina) (tablero[nuevoc2][nuevoc])).isBlanco() || ((Torre) (tablero[nuevoc2][nuevoc])).isBlanco() || ((Alfil) (tablero[nuevoc2][nuevoc])).isBlanco() || ((Caballo) (tablero[nuevoc2][nuevoc])).isBlanco()) {
+                                tablero[actualc2][actualc] = " ";
+                                tablero[nuevoc2][nuevoc] = new Peon("P", true, false, nuevoc2, nuevoc);
+                                mover = true;
                                 System.out.println("No puede esta es un blanca");
                                 mover = false;
                             } else {
@@ -280,9 +296,13 @@ public class Lab4P2_Equipo2 {
                         }
                         nicaso = true;
                         break;
+                    default:
+                        System.out.println("Ingreso un tipo no valido");
+                        break;
                 }
                 blanco = true;
             }
+        }
 
         } while (terminar == false);
     }
