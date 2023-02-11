@@ -39,6 +39,12 @@ public class Peon extends Pieza {
                 } else {
                     if (destinox == actualx - 1 && actualy == destinoy) {
                         valido = true;
+                    }else{
+                        if(((actualx - 1 == destinox)&&(actualy - 1 == destinoy)) || ((actualx - 1 == destinox)&&(actualy + 1 == destinoy))) {
+                            if(matriz[destinox][destinoy] instanceof Pieza){
+                                valido = true;
+                            }
+                        }
                     }
                 }
 
@@ -52,6 +58,12 @@ public class Peon extends Pieza {
                 } else {
                     if (destinox == actualx + 1 && actualy == destinoy) {
                         valido = true;
+                    }else{
+                        if(((actualx + 1 == destinox)&&(actualy - 1 == destinoy)) || ((actualx + 1 == destinox)&&(actualy + 1 == destinoy))) {
+                            if(matriz[destinox][destinoy] instanceof Pieza){
+                                valido = true;
+                            }
+                        }
                     }
                 }
             }

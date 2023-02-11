@@ -45,5 +45,4 @@ public class Lab4P2_Equipo2 {
             System.out.print("Ingrese ");
         }while(terminar==false);
     }
-    
 }
