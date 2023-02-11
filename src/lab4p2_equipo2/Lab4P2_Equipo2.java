@@ -47,6 +47,7 @@ public class Lab4P2_Equipo2 {
         boolean terminar = false;
         boolean nicaso = false;
         boolean mover = false;
+        boolean prueba;
         do {
             System.out.print("Ingrese la cadena (pieza)|ubicacion actual-destino: ");
             String cadena = leer.nextLine();
