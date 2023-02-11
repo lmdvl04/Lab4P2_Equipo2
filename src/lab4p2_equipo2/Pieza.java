@@ -63,6 +63,8 @@ public abstract class Pieza {
     public void setY(int y) {
         this.y = y;
     }
+    
+    
 
     @Override
     public String toString() {
